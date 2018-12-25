@@ -1,0 +1,65 @@
+/* pages/home/home.wxss */
+/*左侧类别列表*/
+.foodlist-left-menu{
+  width: 160rpx;
+  font-size: 28rpx;
+  position: absolute;
+  left: 0rpx;
+  z-index: 10;
+  color: blue;
+   
+}
+/*右侧菜单列表*/
+.foodlist-right{
+  margin-left: 160rpx;
+}
+
+
+/*底部提交订单部分界面*/
+.order-view{
+  position: fixed;
+  display: flex;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 45px;
+}
+
+.order-number{
+  background-color: #eee;
+  width: 50%;
+  color:#ff2d2d;
+  text-align: center;
+  line-height: 45px;
+}
+
+.cart{
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 13px;
+  left:19px;
+  
+}
+
+.order-number-text{
+  position: absolute;
+  width: 20px; 
+  height: 20px;
+  display: block;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: #ff2d2d;
+  color: #fff;
+  line-height: 22px;
+  left: 35px;
+  top: 5px;
+}
+
+.submit-order{
+  width: 50%;
+  line-height: 45px;
+  text-align: center;
+  color:#fff;
+  background-color:rgb(19, 189, 19);
+}
