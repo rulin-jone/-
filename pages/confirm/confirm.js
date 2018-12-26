@@ -7,7 +7,7 @@ Page({
   data: {
   },
 
-/*因为没有微信支付的接口，所以调用摄像头，实现扫码支付*/
+/*因为没有微信支付的接口，所以调用摄像头，实现扫码支付，有点问题哈*/
   payforit:function(){
     wx.scanCode({
       success(res) {
