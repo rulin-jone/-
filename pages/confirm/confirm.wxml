@@ -1,0 +1,29 @@
+<view>
+  <view class='table'>
+    <view class='table-head'>桌号</view>
+
+    <picker class='pick-tableNumber'
+    mode='selector'
+    range='{{tables}}'
+    bindchange='bindPickerChange'
+    value='{{tableNumbers}}'
+    >
+      <view class='tableinput'>{{tables[tableNumbers]}}</view>
+      <span class="table-arrow">﹀</span>
+    </picker>
+  </view>
+
+
+
+  <view class='order-view' style="display{{modalHidden? 'flex':'none'}};">
+    <view class='order-number'>
+      <image class='cart' src='../../images/cart.png' mode='scaleToFill'></image>
+      <span class='order-number-text'>5</span>
+      <span>￥{{totalCost}}</span>
+    </view>
+    <view class='submit-order' bindtap='payforit'>去支付</view>
+  </view>
+
+
+
+</view>
