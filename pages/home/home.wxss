@@ -9,10 +9,30 @@
   color: blue;
    
 }
-/*右侧菜单列表*/
-.foodlist-right{
-  margin-left: 160rpx;
+
+.foodlist-left-menu-selected{
+  padding:10rpx;
+  height:72rpx;
+  color: #FF9C35;
+  border-left:3px solid #FF9C35;
+  background:white;
 }
+
+.foodlist-left-menu-unselected{
+  padding:10rpx;
+  border-bottom:1px solid #E3E3E3;
+  height:72rpx;
+  color: #6C6C6C;
+  background:#F9F9F9;
+}
+
+.foodlist-left-menu-name{
+  text-align: center;
+  margin-top:14rpx;
+}
+
+/*右侧菜单列表*/
+
 
 
 /*底部提交订单部分界面*/
@@ -54,6 +74,9 @@
   line-height: 22px;
   left: 35px;
   top: 5px;
+}
+.cost{
+  margin-left: 55px
 }
 
 .submit-order{

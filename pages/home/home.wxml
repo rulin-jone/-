@@ -20,29 +20,31 @@
 
 <!--左侧菜单-->
   <view class='foodlist-left-menu'>
-    <view wx:for="{{leftname}}" wx:key="item.id" class="{{index==activeIndex? 'foodlist-left-menu-selected':'foodlist-left-menu-unselected'}}">
+    <view wx:for="{{leftname}}" wx:key="item.id" class="{{index==activeIndex? 'foodlist-left-menu-selected':'foodlist-left-menu-unselected'}}" data-index="{{index}}" bindtap='selectMenu'>
      <view class='foodlist-left-menu-name'>{{item}}</view>
     </view>
   </view>
 
 <!--右侧菜单-->
-  <view class='foodlist-right'>
-    <scroll-view
-    scroll-y='true'
-    style='height:100%'
-    >
-      111
-    </scroll-view>
-  </view>
+  <scroll-view scroll-y='true' style='height:100%'>
+    <view class='content' wx:for='{{foodlistData}}' wx:key='{{item.id}}'>
+
+    </view>
+  </scroll-view>
+
+
+  <!--加入购物车提示-->
+  <!--toast hidden="{{toastHidden}}">已加入购物车</toast>
 
   <!--提交订单-->
   <view class='order-view' style="display{{modalHidden? 'flex':'none'}};">
     <view class='order-number'>
       <image class='cart' src='../../images/cart.png' mode='scaleToFill'></image>
-      <span class='order-number-text'>5</span>
-      <span>￥{{totalCost}}</span>
+      <span class='order-number-text'>{{orderNumber}}</span>
+      <span class='cost' wx:if="{{totalCost==0}}">购物车是空的</span>
+      <span class='cost' wx:if="{{totalCost!=0}}">￥{{totalCost}}</span>
     </view>
-    <view class='submit-order' bindtap='submitclick'>提交订单</view>
+    <view class='submit-order' bindtap='submitClick'>提交订单</view>
   </view>
   
 </view>

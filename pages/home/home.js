@@ -5,10 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    leftname:['饮品','主食','凉菜','热门'],
+    leftname: ['热门','特色小炒','特色干锅','主食', '凉菜', '饮品'],
     foodname:[],
-    totalCost:3,
-    orderNumber:3,
+    totalCost:150,
+    orderNumber:0,
+    activeIndex:4,
+    scrollTop:100,
+    toView:'a0',
+
+
 
     bannerUrl:[
       '../../images/1.jpg',
@@ -21,11 +26,49 @@ Page({
     duration:1000
   },
 
-  changeIndicatorDots(e){
-    this.setData({
-      indicatordots:!this.data.indicatordots
+
+
+  //提交订单
+  submitClick:function(){
+    wx.navigateTo({
+      url: '../confirm/confirm'
     })
   },
+
+//选择左侧列表菜单函数
+  selectMenu: function (e) {
+    var index = e.currentTarget.dataset.index
+    console.log(index)
+    this.setData({
+      activeIndex: index,
+      toView: 'a' + index,
+    })
+    console.log(this.data.toView);
+  },
+  scroll:function(e){
+    console.log(e)
+    var dis=e.detail.scrollTop
+    if(dis>0 && dis<1189){
+      this.setData({ activeIndex: 0 })
+    }
+    if(dis>1189 && dis<1867){
+      this.setData({ activeIndex: 1 })
+    }
+    if(dis>1867 && dis<2180){
+      this.setData({ activeIndex: 2 })
+    }
+    if (dis > 1867 && dis < 2180) {
+      this.setData({ activeIndex: 3 })
+    }
+    if (dis > 2180 && dis < 2785) {
+      this.setData({ activeIndex: 4 })
+    }
+    if (dis > 2785 && dis < 2879) {
+      this.setData({ activeIndex: 5 })
+    }
+
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
