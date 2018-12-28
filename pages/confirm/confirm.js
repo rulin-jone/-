@@ -5,9 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    tableNumbers:0,
+    tables: ['1号', '2号', '3号', '4号', '5号', '6号', '7号', '8号', '9号', '10号', '11号','12号']
   },
 
-/*因为没有微信支付的接口，所以调用摄像头，实现扫码支付，有点问题哈*/
+/*因为没有微信支付的接口，所以调用摄像头，实现扫码支付*/
   payforit:function(){
     wx.scanCode({
       success(res) {
@@ -15,6 +17,14 @@ Page({
       }
    })
   },
+
+/*选择桌号*/
+  bindPickerChange:function(e){
+    console.log('picker发生改变，值为',e.detail.value)
+    this.setData({
+      tableNumbers: e.detail.value
+    })
+  },  
 
   /**
    * 生命周期函数--监听页面加载

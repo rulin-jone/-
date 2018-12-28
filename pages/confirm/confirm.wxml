@@ -14,7 +14,13 @@
   </view>
 
 
+  <view class='beizhu'>
+    <view class='beizhu-text'>备注</view>
+    <input class='beizhu-input'> placeholder=""></input>
+  </view>
 
+
+<!--支付-->
   <view class='order-view' style="display{{modalHidden? 'flex':'none'}};">
     <view class='order-number'>
       <image class='cart' src='../../images/cart.png' mode='scaleToFill'></image>
