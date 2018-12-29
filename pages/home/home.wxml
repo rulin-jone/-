@@ -26,9 +26,23 @@
   </view>
 
 <!--右侧菜单-->
-  <scroll-view scroll-y='true' style='height:100%'>
-    <view class='content' wx:for='{{foodlistData}}' wx:key='{{item.id}}'>
-
+  <scroll-view scroll-y='true' style='height:1200rpx' bindscroll='scroll' scroll-into-view='{{toView}}' scroll-top='{{scrollTop}}'>
+    <view class='content' id='a{{index}}' wx:for='{{foodlistData}}' wx:key='unique'>
+      <view class='list-tab'>{{item.name}}</view>
+      <view class='content-list' wx:for='{{item.foods}}' wx:key='unique' wx:for-item='items' wx:key-index='indexs'>
+        <view class='list-image-box'>
+        <image class='list-image' mode='scaleToFill' src='{{items.image_url}}'></image>
+        <view>
+          <view class='issue-name'>
+            <view>{{items.name}}</view>
+            <view style='margin-top;20rpx;color:#f05a86'>
+              ￥{{items.specfoods[0].price}}.00
+              <icon class='plus-icon' data-type='{{index}}' data-index='{{indexs}}' bindtap='selectInfo'></icon>
+            </view>
+          </view>
+        </view>
+        </view>
+      </view>
     </view>
   </scroll-view>
 
