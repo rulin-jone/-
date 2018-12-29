@@ -23,7 +23,24 @@ Page({
     indicatordots:true,
     autoplay:true,
     interval:4000,
-    duration:1000
+    duration:1000,
+
+
+  
+    foodlistData:[
+      {
+        name:'热门',
+        foods:[
+          {
+            name:'niubi'
+          }
+        ]
+      }
+    ]
+
+
+
+
   },
 
 
