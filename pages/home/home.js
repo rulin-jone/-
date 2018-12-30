@@ -12,6 +12,11 @@ Page({
     activeIndex:4,
     scrollTop:100,
     toView:'a0',
+    cartList:[],
+    currentType:0,
+    currentIndex:0,
+    sumMoney:0,
+    showCart:false,
 
 
 
@@ -27,12 +32,45 @@ Page({
 
 
   
-    foodlistData:[
+    listData:[
       {
         name:'热门',
         foods:[
           {
-            name:'niubi'
+            name:'niubi',
+            image_url:'../../images/food-icon/1.jpg',
+            price:'24'
+          },
+          {
+            name:'sb'
+          },
+          {
+            name:'dajiao'
+          },
+          {
+            name:'jj'
+          },
+          {
+            name:'jijijij'
+          },
+          {
+            name:'jiangaonanshigedashabi'
+          }
+        ]
+      },
+      {
+        name:'特色小炒',
+        foods:[
+          {
+            name:'jiba'
+          }
+        ]
+      },
+      {
+        name:'特色干锅',
+        foods:[
+          {
+            name:'saohuo'
           }
         ]
       }
@@ -84,6 +122,39 @@ Page({
       this.setData({ activeIndex: 5 })
     }
 
+  },
+
+
+
+//添加购物车
+  addToCart: function () {
+    var a = this.data
+    var addItem = {
+      "name": a.listData[a.currentType].foods[a.currentIndex].name,
+      "price": a.listData[a.currentType].foods[a.currentIndex].price,
+      "number": 1,
+      "sum": a.listData[a.currentType].foods[a.currentIndex].price,
+    }
+    var sumMonney = a.sumMonney + a.listData[a.currentType].foods[a.currentIndex].price;
+    var cartList = this.data.cartList;
+    cartList.push(addItem);
+    this.setData({
+      cartList: cartList,
+      showModalStatus: false,
+      sumMonney: sumMonney,
+      orderNumber: a.orderNumber + 1
+    });
+    console.log(this.data.cartList)
+  },
+
+  //显示购物车物品
+  showCart:function(){
+    console.log(this.data.showCart)
+    if (this.data.cartList.length != 0) {
+      this.setData({
+        showCart: !this.data.showCart,
+      });
+    }
   },
 
 
