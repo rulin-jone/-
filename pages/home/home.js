@@ -135,13 +135,13 @@ Page({
       "number": 1,
       "sum": a.listData[a.currentType].foods[a.currentIndex].price,
     }
-    var sumMonney = a.sumMonney + a.listData[a.currentType].foods[a.currentIndex].price;
+    var sumMoney = a.sumMoney + a.listData[a.currentType].foods[a.currentIndex].price;
     var cartList = this.data.cartList;
     cartList.push(addItem);
     this.setData({
       cartList: cartList,
       showModalStatus: false,
-      sumMonney: sumMonney,
+      sumMoney: sumMoney,
       orderNumber: a.orderNumber + 1
     });
     console.log(this.data.cartList)
@@ -155,6 +155,16 @@ Page({
         showCart: !this.data.showCart,
       });
     }
+  },
+
+  //清空购物车中已选物品
+  clearCart:function(){
+    this.setData({
+      cartList:[],
+      showCart:false,
+      sumMoney:0,
+      orderNumber:0,
+    })
   },
 
 
