@@ -1,5 +1,6 @@
 /* pages/home/home.wxss */
 /*左侧类别列表*/
+
 .foodlist-left-menu{
   width: 160rpx;
   font-size: 28rpx;
@@ -33,7 +34,41 @@
 
 /*右侧菜单列表*/
 
+.list-tab{
+  margin-left:170rpx;
+  font-size:25rpx;
+  background:#F3F4F6;
+  color:#CBCCCF;
+  padding:2px
+}
 
+.list-image-box{
+  width:160rpx;
+  height:72px;
+  text-align: center;
+}
+.content-list{
+  margin-left:160rpx;
+  display:flex;
+  border-bottom: 1px solid #E3E3E3;
+}
+.list-image{
+  width:108rpx;
+  margin-top:16rpx;
+}
+.issue-name{
+  
+  width:200px;
+  font-size:30rpx;
+  margin-top:20rpx;
+}
+.plus-icon{
+  float:right;
+  color:#FF9C35;
+  font-size:46rpx;
+  border-radius:10px;
+  background-color:   #E3E3E3;
+}
 
 /*底部提交订单部分界面*/
 .order-view{
@@ -85,4 +120,58 @@
   text-align: center;
   color:#fff;
   background-color:rgb(19, 189, 19);
+}
+
+/*购物车详情页面*/
+.drawer_screen {  
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #000;  
+  opacity: 0.5;  
+  overflow: hidden;  
+}  
+
+.cartlist-float{  
+  width: 100%; 
+  overflow: hidden;  
+  position: fixed;   
+  z-index: 1001;
+  bottom: 55px;
+  max-height: 250px;  
+} 
+
+.label-cart-bar{
+  color:#878787;
+  font-size:12px;
+  border-left:4px solid #FF9C35;
+  margin-left: 20px;
+}
+
+.icon-clear{
+    color:#878787;
+    float: right;
+    margin-right: 10px;
+}
+.label-clear{
+    color:#878787;
+    font-size: 12px;
+}
+
+.cart-list-box{
+  background:#FFFFFF;
+  display:flex;
+  font-size:13px;
+}
+
+.cart-scroll-list{
+  height:450rpx;
+}
+
+.list-info{
+  width:50%;
+  padding:5px 15px;
 }
