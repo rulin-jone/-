@@ -39,13 +39,15 @@ Page({
           {
             name:'niubi',
             image_url:'../../images/food-icon/1.jpg',
-            price:'24'
+            price:24
           },
           {
-            name:'sb'
+            name:'sb',
+            price:37
           },
           {
-            name:'dajiao'
+            name:'dajiao',
+            price:59
           },
           {
             name:'jj'
@@ -85,9 +87,18 @@ Page({
 
   //提交订单
   submitClick:function(){
-    wx.navigateTo({
-      url: '../confirm/confirm'
-    })
+    if(this.data.sumMoney!=0){
+      wx.setStorageSync('cartList', this.data.cartList);
+      wx.setStorageSync('sumMoney', this.data.sumMoney);
+      wx.setStorageSync('orderNumber', this.data.cupNumber);     
+      wx.navigateTo({
+        url: '../confirm/confirm'
+      }) 
+    }
+    if(this.data.sumMoney == 0){
+      
+    }
+
   },
 
 //选择左侧列表菜单函数
@@ -126,8 +137,17 @@ Page({
 
 
 
+
 //添加购物车
-  addToCart: function () {
+  addToCart: function (e) {
+    //传递菜品信息
+    var type = e.currentTarget.dataset.type;
+    var index = e.currentTarget.dataset.index;
+    this.setData({
+      currentType: type,
+      currentIndex: index,
+    });
+    //加购物车
     var a = this.data
     var addItem = {
       "name": a.listData[a.currentType].foods[a.currentIndex].name,
@@ -146,6 +166,8 @@ Page({
     });
     console.log(this.data.cartList)
   },
+
+ 
 
   //显示购物车物品
   showCart:function(){
@@ -167,12 +189,46 @@ Page({
     })
   },
 
+  //添加购物车中物品的数量
+  addNumber: function (e) {
+    var index = e.currentTarget.dataset.index;
+    console.log(index)
+    var cartList = this.data.cartList;
+    cartList[index].number++;
+    var sum = this.data.sumMoney + cartList[index].price;
+    cartList[index].sum += cartList[index].price;
+
+    this.setData({
+      cartList: cartList,
+      sumMoney: sum,
+      orderNumber: this.data.orderNumber + 1
+    });
+  },
+
+  //减少购物车中物品的数量
+  decNumber: function (e) {
+    var index = e.currentTarget.dataset.index;
+    console.log(index)
+    var cartList = this.data.cartList;
+
+    var sum = this.data.sumMoney - cartList[index].price;
+    cartList[index].sum -= cartList[index].price;
+    cartList[index].number == 1 ? cartList.splice(index, 1) : cartList[index].number--;
+    this.setData({
+      cartList: cartList,
+      sumMoney: sum,
+      showCart: cartList.length == 0 ? false : true,
+      orderNumber: this.data.orderNumber - 1
+    });
+  },
+
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
   },
 
   /**
