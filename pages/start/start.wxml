@@ -1,0 +1,21 @@
+<view>
+<!-- 顶部轮播图 -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{bannerUrl}}" wx:key="unique">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 操作按钮 -->
+  <view class='btn-bar'>
+    <view class='btn-block' bindtap='gohome'>
+      <view class="btn_op1">开始点餐</view>
+    </view>
+  </view>
+  <!-- 中部广告 -->
+  <view class="ad-box">
+    <image src='../../images/1.jpg' class="image_ad"></image>
+  </view>
+  
+</view>
