@@ -2,7 +2,7 @@
 
 <view class='section'>
 
-<!--顶部条幅-->
+<!--顶部条幅>
   <view class='banner'>
     <swiper
     indicator-dots='{{indicatordots}}'
@@ -26,7 +26,7 @@
   </view>
 
 <!--右侧菜单-->
-  <scroll-view scroll-y="true" style='height:1200rpx;' bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <scroll-view class='right-list' scroll-y="true" style='height:1200rpx;' bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
     <view class="content" id="a{{index}}" wx:for="{{listData}}" wx:key="unique">
       <view class='list-tab'>{{item.name}}</view>
       <view class='content-list' wx:for="{{item.foods}}" wx:key="unique" wx:for-item="items" wx:for-index="indexs">
@@ -46,7 +46,7 @@
 
 
   <!--加入购物车提示-->
-  <!--toast hidden="{{toastHidden}}">已加入购物车</toast>
+  <toast hidden="{{toastHidden}}">已加入购物车</toast>
 
   <!--显示购物车详细信息-->
 <view class="drawer_screen" bindtap="showCart" data-statu="close" wx:if="{{showCart}}"></view>

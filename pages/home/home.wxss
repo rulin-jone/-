@@ -57,7 +57,6 @@
   margin-top:16rpx;
 }
 .issue-name{
-  
   width:200px;
   font-size:30rpx;
   margin-top:20rpx;
@@ -140,7 +139,7 @@
   overflow: hidden;  
   position: fixed;   
   z-index: 1001;
-  bottom: 55px;
+  bottom: 45px;
   max-height: 250px;  
 } 
 
@@ -173,5 +172,5 @@
 
 .list-info{
   width:50%;
-  padding:5px 15px;
+  padding:10px 15px;
 }

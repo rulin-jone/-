@@ -17,6 +17,7 @@ Page({
     currentIndex:0,
     sumMoney:0,
     showCart:false,
+    toastHidden:true,
 
 
 
@@ -32,31 +33,31 @@ Page({
 
 
   
-    listData:[
+  /*  listData:[
       {
         name:'热门',
         foods:[
           {
-            name:'niubi',
+            name:'炒牛河',
             image_url:'../../images/food-icon/1.jpg',
             price:24
           },
           {
-            name:'sb',
+            name:'炒辣椒',
             price:37
           },
           {
-            name:'dajiao',
+            name:'炒青椒',
             price:59
           },
           {
-            name:'jj'
+            name:'炒韭菜'
           },
           {
-            name:'jijijij'
+            name:'炒鸡蛋'
           },
           {
-            name:'jiangaonanshigedashabi'
+            name:'炒黄瓜'
           }
         ]
       },
@@ -64,7 +65,7 @@ Page({
         name:'特色小炒',
         foods:[
           {
-            name:'jiba'
+            name:'炒豆芽'
           }
         ]
       },
@@ -72,13 +73,14 @@ Page({
         name:'特色干锅',
         foods:[
           {
-            name:'saohuo'
+            name:'炒菠菜'
           }
         ]
       }
-    ]
+    ] */
+    listData:[]
 
-
+    
 
 
   },
@@ -90,13 +92,14 @@ Page({
     if(this.data.sumMoney!=0){
       wx.setStorageSync('cartList', this.data.cartList);
       wx.setStorageSync('sumMoney', this.data.sumMoney);
-      wx.setStorageSync('orderNumber', this.data.cupNumber);     
+      wx.setStorageSync('orderNumber', this.data.orderNumber);     
       wx.navigateTo({
-        url: '../confirm/confirm'
+        url: '../list/list'
       }) 
     }
     if(this.data.sumMoney == 0){
       
+
     }
 
   },
@@ -114,22 +117,22 @@ Page({
   scroll:function(e){
     console.log(e)
     var dis=e.detail.scrollTop
-    if(dis>0 && dis<1189){
+    if(dis>0 && dis<300){
       this.setData({ activeIndex: 0 })
     }
-    if(dis>1189 && dis<1867){
+    if(dis>300 && dis<600){
       this.setData({ activeIndex: 1 })
     }
-    if(dis>1867 && dis<2180){
+    if(dis>600 && dis<900){
       this.setData({ activeIndex: 2 })
     }
-    if (dis > 1867 && dis < 2180) {
+    if (dis > 900 && dis < 1050) {
       this.setData({ activeIndex: 3 })
     }
-    if (dis > 2180 && dis < 2785) {
+    if (dis > 1200 && dis < 1350) {
       this.setData({ activeIndex: 4 })
     }
-    if (dis > 2785 && dis < 2879) {
+    if (dis > 1350 && dis < 1800) {
       this.setData({ activeIndex: 5 })
     }
 
@@ -165,6 +168,18 @@ Page({
       orderNumber: a.orderNumber + 1
     });
     console.log(this.data.cartList)
+
+    //显示成功加入购物车的提示，持续一秒
+    this.setData({
+      toastHidden:false
+    });
+    
+    var _this = this;
+    setTimeout(function () {
+      _this.setData({
+        toastHidden: true
+      });
+    }, 1000);
   },
 
  
@@ -228,7 +243,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '点餐！'
+    })
+    //从数据库中获取数据
     var that = this;
+    var sysinfo = wx.getSystemInfoSync().windowHeight;
+    console.log(sysinfo)
+    wx.showLoading({
+      title: '努力加载中',
+    })
+    
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c2e23e17096eb383e0cc254/laozhangfood/query#!method=get',
+      method: 'GET',
+      data: {},
+      header: {
+        'Accept': 'application/json'
+      },
+      success: function (res) {
+        wx.hideLoading();
+        console.log(res)
+        that.setData({
+          listData: res.data.data.listData,
+          loading: true
+        })
+      }
+    })
   },
 
   /**
