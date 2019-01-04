@@ -17,6 +17,12 @@
 
 课设成功结束哦耶，属于咸鱼的快乐！
 
-![](
-        -/screenshots/超级截屏_20190104_210733.png
-      )
+![](https://raw.githubusercontent.com/rulin-jone/-/master/screenshots/%E8%B6%85%E7%BA%A7%E6%88%AA%E5%B1%8F_20190104_210733.png)
+![](https://raw.githubusercontent.com/rulin-jone/-/master/screenshots/%E8%B6%85%E7%BA%A7%E6%88%AA%E5%B1%8F_20190104_210820.png)
+![](https://raw.githubusercontent.com/rulin-jone/-/master/screenshots/%E8%B6%85%E7%BA%A7%E6%88%AA%E5%B1%8F_20190104_210845.png)
+![](https://raw.githubusercontent.com/rulin-jone/-/master/screenshots/%E8%B6%85%E7%BA%A7%E6%88%AA%E5%B1%8F_20190104_210857.png)
+![](https://raw.githubusercontent.com/rulin-jone/-/master/screenshots/%E8%B6%85%E7%BA%A7%E6%88%AA%E5%B1%8F_20190104_210913.png)
+
+
+
+
