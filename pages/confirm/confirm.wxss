@@ -34,21 +34,25 @@
 }
 
 
-/**/
+/*备注窗口*/
 .beizhu{
-    padding: 30px 40px 40px 30px;
-    border-bottom: 1px solid #aaa;
+  padding: 30px 40px 40px 30px;
+  border-bottom: 1px solid #aaa;
 }
 .beizhu-text{
-    margin-top: 4px;
-    margin-right: 20px;
-    font-size: 16px;
-    float: left;
+  margin-top: 4px;
+  margin-right: 20px;
+  font-size: 16px;
+  float: left;
 }
 .beizhu-input{
-    padding-left: 10px;
-    border: 1px solid #ccc;
-    font-size: 14px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width:95%;
+  background:#F2F2F2;
+  padding:10px;
+  height:80px;
 }
 
 /*底部去支付界面*/
