@@ -1,6 +1,9 @@
 {
   "pages": [
+    "pages/start/start",
     "pages/home/home",
-    "pages/confirm/confirm"
+    "pages/confirm/confirm",
+    "pages/list/list"
+    
   ]
 }
