@@ -15,7 +15,7 @@
   </view>
   <!-- 中部广告 -->
   <view class="ad-box">
-    <image src='../../images/1.jpg' class="image_ad"></image>
+    <image src='../../images/laozhang.jpg' class="image_ad"></image>
   </view>
   
 </view>
