@@ -15,7 +15,7 @@
 数据库好难啊，明天就是deadline了，不搞数据库了，直接用easy mock造假数据吧（囧
 
 
-课设成功结束哦耶，属于咸鱼的快乐！
+成功结束哦耶，属于咸鱼的快乐！
 
 ![](https://raw.githubusercontent.com/rulin-jone/-/master/screenshots/%E8%B6%85%E7%BA%A7%E6%88%AA%E5%B1%8F_20190104_210733.png)
 ![](https://raw.githubusercontent.com/rulin-jone/-/master/screenshots/%E8%B6%85%E7%BA%A7%E6%88%AA%E5%B1%8F_20190104_210820.png)
